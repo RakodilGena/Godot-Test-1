@@ -5,6 +5,8 @@ namespace GettingStartedWithGodot4;
 
 public partial class Mob : CharacterBody2D
 {
+    private int _health = 15;
+
     private Slime _slime = null!;
     private Player _player = null!;
 
@@ -12,6 +14,8 @@ public partial class Mob : CharacterBody2D
     {
         _slime = GetNode<Slime>("Slime");
         _player = GetNode<Player>("/root/Game/Player");
+
+        _slime.PlayWalk();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -21,5 +25,15 @@ public partial class Mob : CharacterBody2D
         Velocity = direction * 300;
 
         MoveAndSlide();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        _health -= damage;
+
+        _slime.PlayHurt();
+
+        if (_health <= 0)
+            QueueFree();
     }
 }
