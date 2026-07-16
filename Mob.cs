@@ -5,10 +5,12 @@ namespace GettingStartedWithGodot4;
 
 public partial class Mob : CharacterBody2D
 {
-    private int _health = 15;
-
+    private static readonly PackedScene SmokeScene = GD.Load<PackedScene>("res://smoke_explosion/smoke_explosion.tscn");
+    
+    private int _health = 5;
     private Slime _slime = null!;
     private Player _player = null!;
+    
 
     public override void _Ready()
     {
@@ -34,6 +36,13 @@ public partial class Mob : CharacterBody2D
         _slime.PlayHurt();
 
         if (_health <= 0)
+        {
             QueueFree();
+            
+            var smoke = SmokeScene.Instantiate();
+            var parent=  GetParent();
+            parent.AddChild(smoke);
+            (smoke as Node2D)?.GlobalPosition = GlobalPosition;
+        }
     }
 }
