@@ -14,26 +14,27 @@ point_count = 5
 y_sort_enabled = true
 script = ExtResource("1_l26od")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=132978679]
+[node name="FieldCanvasLayer" type="CanvasLayer" parent="." unique_id=132978679]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1308362917]
+[node name="ColorRect" type="ColorRect" parent="FieldCanvasLayer" unique_id=1308362917]
 offset_right = 1920.0
 offset_bottom = 1080.0
-
-[node name="MobSpawnPath" type="Path2D" parent="." unique_id=1354234143]
-curve = SubResource("Curve2D_qqaft")
-
-[node name="MobSpawnPathFollow" type="PathFollow2D" parent="MobSpawnPath" unique_id=341764174]
-unique_name_in_owner = true
-position = Vector2(-154, -139)
-rotation = -0.00045146726
 
 [node name="MobSpawnTimer" type="Timer" parent="." unique_id=238896363]
 autostart = true
 
 [node name="Player" parent="." unique_id=2070546860 instance=ExtResource("1_3cish")]
 position = Vector2(753, 516)
+
+[node name="MobSpawnPath" type="Path2D" parent="Player" unique_id=1354234143]
+position = Vector2(-753, -516)
+curve = SubResource("Curve2D_qqaft")
+
+[node name="MobSpawnPathFollow" type="PathFollow2D" parent="Player/MobSpawnPath" unique_id=341764174]
+unique_name_in_owner = true
+position = Vector2(-154, -139)
+rotation = -0.00045146726
 
 [node name="PineTree" parent="." unique_id=868447556 instance=ExtResource("2_y3pti")]
 position = Vector2(467, 312)
@@ -74,4 +75,35 @@ position = Vector2(1547, 388)
 [node name="PineTree13" parent="." unique_id=2081862548 instance=ExtResource("2_y3pti")]
 position = Vector2(1483, 967)
 
+[node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=1596906369]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen" unique_id=1055446659]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4117647, 0, 0, 0.70980394)
+
+[node name="Label" type="Label" parent="GameOverScreen/ColorRect" unique_id=1595239816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.13043
+offset_top = -50.0
+offset_right = 189.13037
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Noob down"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="MobSpawnTimer" to="." method="OnMobSpawnTimerTimeout"]
+[connection signal="HealthDepleted" from="Player" to="." method="OnPlayerHealthDepleted"]
