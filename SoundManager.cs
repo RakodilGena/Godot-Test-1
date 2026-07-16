@@ -11,13 +11,13 @@ public partial class SoundManager : Node
         Instance = this;
     }
 
-    public void PlaySoundAt(
+    public static void PlaySoundAt(
         AudioStream stream,
         Vector2 position,
         float volumeDb = 0f)
     {
         var player = new AudioStreamPlayer2D();
-        AddChild(player);
+        Instance.AddChild(player);
         player.Stream = stream;
         player.GlobalPosition = position;
         player.VolumeDb = volumeDb;

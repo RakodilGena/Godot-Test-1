@@ -61,7 +61,7 @@ public partial class Mob : CharacterBody2D
         var index = GD.RandRange(0, DamagedSounds.Length-1);
         var sound = DamagedSounds[index];
         
-        SoundManager.Instance.PlaySoundAt(
+        SoundManager.PlaySoundAt(
             sound,
             GlobalPosition);
     }
@@ -75,7 +75,7 @@ public partial class Mob : CharacterBody2D
         parent.AddChild(smoke);
         (smoke as Node2D)?.GlobalPosition = GlobalPosition;
         
-        SoundManager.Instance.PlaySoundAt(
+        SoundManager.PlaySoundAt(
             DeadSound,
             GlobalPosition);
     }
