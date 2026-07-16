@@ -7,18 +7,17 @@ public partial class SurvivorsGame : Node2D
     private static readonly PackedScene MobScene = GD.Load<PackedScene>("res://mob.tscn");
     private PathFollow2D _pathFollow = null!;
 
-    override public void _Ready()
+    public override void _Ready()
     {
-        _pathFollow = GetNode<PathFollow2D>("%PathFollow2D");
+        _pathFollow = GetNode<PathFollow2D>("%MobSpawnPathFollow");
+    }
 
-        SpawnMob();
-        SpawnMob();
-        SpawnMob();
-        SpawnMob();
+    private void OnMobSpawnTimerTimeout()
+    {
         SpawnMob();
     }
     
-    public void SpawnMob()
+    private void SpawnMob()
     {
         var mob = MobScene.Instantiate();
         
