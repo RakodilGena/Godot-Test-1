@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dcqk8clcqavl"]
+
+[sub_resource type="FontFile" id="FontFile_1xdt1"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/88/0/ascent = 0.0
+cache/0/88/0/descent = 0.0
+cache/0/88/0/underline_position = 0.0
+cache/0/88/0/underline_thickness = 0.0
+cache/0/88/0/scale = 1.0
+
+[node name="MainTitle" type="Node2D" unique_id=1775848979]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=435957441]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=919435058]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(2.8878452e-07, 0.5210219, 0.528179, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=683186575]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.5
+offset_top = -389.0
+offset_right = 540.5
+offset_bottom = -271.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = SubResource("FontFile_1xdt1")
+theme_override_font_sizes/font_size = 88
+text = "Welcome to the game fellas"
+
+[node name="MainMenu" type="BoxContainer" parent="CanvasLayer" unique_id=1476308287]
+propagate_maximum_size = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 60.0
+offset_right = 400.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+vertical = true
+
+[node name="StartGame" type="Button" parent="CanvasLayer/MainMenu" unique_id=1905686062]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Embrace the eternity"
+
+[node name="Exit" type="Button" parent="CanvasLayer/MainMenu" unique_id=34429717]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Coward?
+"
