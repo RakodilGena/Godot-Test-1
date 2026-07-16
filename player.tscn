@@ -8,9 +8,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xdt1"]
 radius = 32.06244
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cdaxx"]
-radius = 41.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqtel"]
 bg_color = Color(0.27216238, 0.03463316, 0, 1)
 corner_radius_top_left = 8
@@ -25,6 +22,9 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdaxx"]
+radius = 41.0
+
 [node name="Player" type="CharacterBody2D" unique_id=2070546860]
 script = ExtResource("1_onrkg")
 
@@ -34,6 +34,17 @@ debug_color = Color(0, 0.20944136, 0.40184006, 0.41960785)
 
 [node name="HappyBoo" parent="." unique_id=1091727253 instance=ExtResource("1_4flbx")]
 script = ExtResource("3_i3pqv")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1785967359]
+unique_name_in_owner = true
+offset_left = -124.999985
+offset_top = -131.0
+offset_right = 123.999985
+offset_bottom = -104.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hqtel")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1xdt1")
+value = 100.0
+show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2073715796]
 
@@ -48,14 +59,3 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=701962429]
 shape = SubResource("CircleShape2D_cdaxx")
 debug_color = Color(0.9908882, 0, 0.2785126, 0.41960785)
-
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=1785967359]
-unique_name_in_owner = true
-offset_left = -124.999985
-offset_top = -131.0
-offset_right = 123.999985
-offset_bottom = -104.0
-theme_override_styles/background = SubResource("StyleBoxFlat_hqtel")
-theme_override_styles/fill = SubResource("StyleBoxFlat_1xdt1")
-value = 100.0
-show_percentage = false
