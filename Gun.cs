@@ -43,7 +43,7 @@ public partial class Gun : Area2D
     {
         if (!_lockedOnEnemy)
             return;
-        
+
         //check if theres someone in FIRING, not in AIMING range. 
         if (!HasOverlappingBodies())
             return;

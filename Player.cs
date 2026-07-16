@@ -8,12 +8,12 @@ public partial class Player : CharacterBody2D
 {
     private float _health = 100f;
     private const float DAMAGE_RATE_PER_ENEMY = 5f, MAX_HEALTH = 100f;
-    
+
     private HappyBoo _happyBoo = null!;
     private Area2D _hurtBox = null!;
     private ProgressBar _healthBar = null!;
-    
-    
+
+
     [Signal]
     public delegate void HealthDepletedEventHandler();
 
@@ -49,7 +49,7 @@ public partial class Player : CharacterBody2D
         {
             _health -= DAMAGE_RATE_PER_ENEMY * overlappingMobs.Count * (float)delta;
             _healthBar.SetValue(_health / MAX_HEALTH * 100);
-            
+
             if (_health <= 0f)
             {
                 EmitSignalHealthDepleted();
