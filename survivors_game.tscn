@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_3cish"]
 [ext_resource type="Script" uid="uid://dmgcvocd6g0si" path="res://SurvivorsGame.cs" id="1_l26od"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_y3pti"]
+[ext_resource type="PackedScene" uid="uid://sny82r0xfb7d" path="res://animated_tree.tscn" id="4_qqaft"]
 
 [sub_resource type="Curve2D" id="Curve2D_qqaft"]
 _data = {
@@ -51,9 +52,6 @@ position = Vector2(346, 792)
 [node name="PineTree3" parent="." unique_id=1931452378 instance=ExtResource("2_y3pti")]
 position = Vector2(967, 291)
 
-[node name="PineTree5" parent="." unique_id=1438089775 instance=ExtResource("2_y3pti")]
-position = Vector2(1040, 305)
-
 [node name="PineTree4" parent="." unique_id=2066874628 instance=ExtResource("2_y3pti")]
 position = Vector2(999, 365)
 
@@ -72,9 +70,6 @@ position = Vector2(1191, 534)
 [node name="PineTree10" parent="." unique_id=929499697 instance=ExtResource("2_y3pti")]
 position = Vector2(752, 67)
 
-[node name="PineTree11" parent="." unique_id=641522954 instance=ExtResource("2_y3pti")]
-position = Vector2(1204, 141)
-
 [node name="PineTree12" parent="." unique_id=819087059 instance=ExtResource("2_y3pti")]
 position = Vector2(1547, 388)
 
@@ -84,12 +79,6 @@ position = Vector2(1483, 967)
 [node name="PineTree14" parent="." unique_id=661037328 instance=ExtResource("2_y3pti")]
 position = Vector2(577, 643)
 
-[node name="PineTree15" parent="." unique_id=680786659 instance=ExtResource("2_y3pti")]
-position = Vector2(235, 1089)
-
-[node name="PineTree16" parent="." unique_id=1032747167 instance=ExtResource("2_y3pti")]
-position = Vector2(929, 1071)
-
 [node name="PineTree17" parent="." unique_id=1805019882 instance=ExtResource("2_y3pti")]
 position = Vector2(1288, 1192)
 
@@ -98,9 +87,6 @@ position = Vector2(477, 1268)
 
 [node name="PineTree19" parent="." unique_id=1985593892 instance=ExtResource("2_y3pti")]
 position = Vector2(1738, 775)
-
-[node name="PineTree20" parent="." unique_id=674788897 instance=ExtResource("2_y3pti")]
-position = Vector2(225, 84)
 
 [node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=1596906369]
 unique_name_in_owner = true
@@ -151,6 +137,21 @@ shape = SubResource("RectangleShape2D_cdaxx")
 [node name="Right" type="CollisionShape2D" parent="GameFieldBarrier" unique_id=1154334737]
 position = Vector2(2120, 540)
 shape = SubResource("RectangleShape2D_cdaxx")
+
+[node name="AnimatedTree" parent="." unique_id=428105484 instance=ExtResource("4_qqaft")]
+position = Vector2(96, 798)
+
+[node name="AnimatedTree2" parent="." unique_id=951881805 instance=ExtResource("4_qqaft")]
+position = Vector2(1076, 327)
+
+[node name="AnimatedTree3" parent="." unique_id=852719601 instance=ExtResource("4_qqaft")]
+position = Vector2(366, 117)
+
+[node name="AnimatedTree4" parent="." unique_id=303448527 instance=ExtResource("4_qqaft")]
+position = Vector2(1702, 134)
+
+[node name="AnimatedTree5" parent="." unique_id=1806569170 instance=ExtResource("4_qqaft")]
+position = Vector2(1812, 1018)
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="OnMobSpawnTimerTimeout"]
 [connection signal="HealthDepleted" from="Player" to="." method="OnPlayerHealthDepleted"]

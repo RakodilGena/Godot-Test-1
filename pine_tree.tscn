@@ -7,6 +7,7 @@
 radius = 21.023796
 
 [node name="PineTree" type="StaticBody2D" unique_id=868447556]
+collision_mask = 0
 
 [node name="GroundShadow" type="Sprite2D" parent="." unique_id=1431191881]
 modulate = Color(0.61827666, 0.7622267, 0.71788317, 1)
