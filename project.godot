@@ -79,6 +79,14 @@ run/main_scene="uid://dcqk8clcqavl"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.png"
 
+[audio]
+
+buses/default_bus_layout="uid://c0r1synmqj70v"
+
+[autoload]
+
+SoundManager="*uid://b5umpt3rjtyks"
+
 [display]
 
 window/size/viewport_width=1920
