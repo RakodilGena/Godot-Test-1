@@ -23,17 +23,7 @@ internal static class Core
         Node currentScene,
         PackedScene nextPackedScene)
     {
-        var nextScene = nextPackedScene.Instantiate();
-
-        var tree = currentScene.GetTree();
-        // 3. Add the new scene to the root tree
-        tree.Root.AddChild(nextScene);
-
-        // 4. Set it as the current active scene
-        tree.CurrentScene = nextScene;
-
-        // 5. Delete the old scene safely
-        currentScene.QueueFree();
+        currentScene.GetTree().ChangeSceneToPacked(nextPackedScene);
     }
 
     public static void ExitGame(Node currentScene)
