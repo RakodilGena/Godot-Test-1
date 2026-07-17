@@ -24,8 +24,21 @@ public partial class Gun : Area2D
 
         if (enemiesInAimingRange.Count > 0)
         {
-            var target = enemiesInAimingRange[0];
-            LookAt(target.GlobalPosition);
+            Node2D closest = null!;
+            float minDistanceSquared = float.MaxValue;
+
+            for (var i = 0; i < enemiesInAimingRange.Count; i++)
+            {
+                var enemy = enemiesInAimingRange[i];
+                var distanceToEnemy = GlobalPosition.DistanceSquaredTo(enemy.GlobalPosition);
+                if (distanceToEnemy <= minDistanceSquared)
+                {
+                    closest = enemy;
+                    minDistanceSquared = distanceToEnemy;
+                }
+            }
+
+            LookAt(closest.GlobalPosition);
             _lockedOnEnemy = true;
         }
         else

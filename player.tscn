@@ -49,9 +49,10 @@ value = 100.0
 show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2073715796]
+position = Vector2(0, 1)
 
 [node name="Gun" parent="." unique_id=1394049262 instance=ExtResource("4_hqtel")]
-position = Vector2(0, -39)
+position = Vector2(0, -58)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=625125771]
 unique_name_in_owner = true

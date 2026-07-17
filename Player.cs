@@ -1,4 +1,3 @@
-using System;
 using GettingStartedWithGodot4.characters.happy_boo;
 using Godot;
 
@@ -7,7 +6,7 @@ namespace GettingStartedWithGodot4;
 public partial class Player : CharacterBody2D
 {
     private float _health = 100f;
-    private const float DAMAGE_RATE_PER_ENEMY = 500f, MAX_HEALTH = 100f;
+    private const float DAMAGE_RATE_PER_ENEMY = 5f, MAX_HEALTH = 100f;
 
     private HappyBoo _happyBoo = null!;
     private Area2D _hurtBox = null!;

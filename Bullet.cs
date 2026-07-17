@@ -1,4 +1,3 @@
-using GettingStartedWithGodot4.characters.slime;
 using Godot;
 
 namespace GettingStartedWithGodot4;

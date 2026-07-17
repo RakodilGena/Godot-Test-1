@@ -21,7 +21,7 @@ debug_color = Color(1, 0, 0.10470045, 0.41960785)
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=752466155]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot" unique_id=56852712]
-position = Vector2(81, -19)
+position = Vector2(81, 11)
 texture = ExtResource("1_vk1bi")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=989141310]
