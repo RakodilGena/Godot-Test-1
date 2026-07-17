@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_3cish"]
 [ext_resource type="Script" uid="uid://dmgcvocd6g0si" path="res://SurvivorsGame.cs" id="1_l26od"]
+[ext_resource type="Script" uid="uid://bq55o33ypujlk" path="res://PauseListener.cs" id="2_7jj1j"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_y3pti"]
 [ext_resource type="PackedScene" uid="uid://sny82r0xfb7d" path="res://animated_tree.tscn" id="4_qqaft"]
 
@@ -20,6 +21,10 @@ size = Vector2(20, 1499)
 [node name="Game" type="Node2D" unique_id=1341456312]
 y_sort_enabled = true
 script = ExtResource("1_l26od")
+
+[node name="PauseListener" type="Node" parent="." unique_id=538416439]
+process_mode = 3
+script = ExtResource("2_7jj1j")
 
 [node name="FieldCanvasLayer" type="CanvasLayer" parent="." unique_id=132978679]
 layer = -1
@@ -118,6 +123,11 @@ text = "Noob down"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameOverTimer" type="Timer" parent="GameOverScreen" unique_id=798962006]
+unique_name_in_owner = true
+process_mode = 3
+wait_time = 4.0
+
 [node name="GameFieldBarrier" type="StaticBody2D" parent="." unique_id=1657551805]
 collision_layer = 4
 collision_mask = 0
@@ -155,3 +165,4 @@ position = Vector2(1812, 1018)
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="OnMobSpawnTimerTimeout"]
 [connection signal="HealthDepleted" from="Player" to="." method="OnPlayerHealthDepleted"]
+[connection signal="timeout" from="GameOverScreen/GameOverTimer" to="." method="OnGameOverTimeout"]

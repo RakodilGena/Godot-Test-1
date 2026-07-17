@@ -5,7 +5,7 @@ namespace GettingStartedWithGodot4;
 
 public partial class Mob : CharacterBody2D
 {
-    private static readonly PackedScene SmokeScene = 
+    private static readonly PackedScene SmokeScene =
         GD.Load<PackedScene>("res://smoke_explosion/smoke_explosion.tscn");
 
     private static readonly AudioStream[] DamagedSounds =
@@ -19,7 +19,7 @@ public partial class Mob : CharacterBody2D
 
     private static readonly AudioStream DeadSound =
         GD.Load<AudioStream>("res://sounds/death.mp3");
-    
+
     private int _health = 5;
     private Slime _slime = null!;
     private Player _player = null!;
@@ -45,11 +45,11 @@ public partial class Mob : CharacterBody2D
     public void TakeDamage(int damage)
     {
         _health -= damage;
-        
+
         _slime.PlayHurt();
 
         PlayDamagedSound();
-        
+
         if (_health <= 0)
         {
             Die();
@@ -58,9 +58,9 @@ public partial class Mob : CharacterBody2D
 
     private void PlayDamagedSound()
     {
-        var index = GD.RandRange(0, DamagedSounds.Length-1);
+        var index = GD.RandRange(0, DamagedSounds.Length - 1);
         var sound = DamagedSounds[index];
-        
+
         SoundManager.PlaySoundAt(
             sound,
             GlobalPosition);
@@ -74,7 +74,7 @@ public partial class Mob : CharacterBody2D
         var parent = GetParent();
         parent.AddChild(smoke);
         (smoke as Node2D)?.GlobalPosition = GlobalPosition;
-        
+
         SoundManager.PlaySoundAt(
             DeadSound,
             GlobalPosition);

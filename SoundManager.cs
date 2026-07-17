@@ -9,6 +9,7 @@ public partial class SoundManager : Node
     public override void _Ready()
     {
         Instance = this;
+        Instance.ProcessMode = ProcessModeEnum.Always;
     }
 
     public static void PlaySoundAt(
